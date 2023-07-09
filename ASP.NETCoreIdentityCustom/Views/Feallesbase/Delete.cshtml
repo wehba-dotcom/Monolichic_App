@@ -1,0 +1,92 @@
+﻿@model Bornholm_Slægts.Models.Feallesbase
+
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="ID" hidden />
+     <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3 ">Selt Side</h2>
+        </div>
+        <div class="col">
+            <div class="row-12">
+                <div class="form-group col">
+                    <div class="mp-3">
+                        <label asp-for="AvisTypeID" class="form-label"></label>
+                        <input asp-for="AvisTypeID" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Avisdato" class="form-label"></label>
+                        <input asp-for="Avisdato" class="form-control" />
+
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Efternavn" class="form-label"></label>
+                        <input asp-for="Efternavn" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Fornavne" class="form-label"></label>
+                        <input asp-for="Fornavne" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Foedt" class="form-label"></label>
+                        <input asp-for="Foedt" class="form-control" />
+
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Alder" class="form-label"></label>
+                        <input asp-for="Alder" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Doebenavn" class="form-label"></label>
+                        <input asp-for="Doebenavn" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Erhverv" class="form-label"></label>
+                        <input asp-for="Erhverv" class="form-control" />
+
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Adresser" class="form-label"></label>
+                        <input asp-for="Adresser" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="SognID" class="form-label"></label>
+                        <input asp-for="SognID" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="TidlBopael" class="form-label"></label>
+                        <input asp-for="TidlBopael" class="form-control" />
+
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Doedsdato" class="form-label"></label>
+                        <input asp-for="Doedsdato" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Begravelsesdato" class="form-label"></label>
+                        <input asp-for="Begravelsesdato" class="form-control" />
+                    </div>
+                    <div class="mp-3">
+                        <label asp-for="Begravelsessted" class="form-label"></label>
+                        <input asp-for="Begravelsessted" class="form-control" />
+
+                </div>
+                <br/>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-danger w-75" value="Slet" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-75">TilBage</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+

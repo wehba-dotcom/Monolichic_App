@@ -25,4 +25,12 @@
     <_ContentIncludedByDefault Remove="Views\Role\Manager.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Views\Feallesbase\Create.cshtml" />
+    <None Include="Views\Feallesbase\Delete.cshtml" />
+    <None Include="Views\Feallesbase\Index.cshtml" />
+    <None Include="Views\Feallesbase\Search.cshtml" />
+    <None Include="Views\Feallesbase\Update.cshtml" />
+  </ItemGroup>
+
 </Project>

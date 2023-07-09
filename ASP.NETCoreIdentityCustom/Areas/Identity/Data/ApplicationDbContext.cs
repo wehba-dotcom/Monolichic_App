@@ -1,4 +1,5 @@
 ﻿using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+using Bornholm_Slægts.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +13,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
         : base(options)
     {
     }
-
+    public DbSet<Feallesbase> Feallesbases { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

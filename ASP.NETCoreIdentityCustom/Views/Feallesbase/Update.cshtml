@@ -1,0 +1,128 @@
+﻿@model Bornholm_Slægts.Models.Feallesbase
+
+
+<form method="post" asp-action="UpdatePost">
+    <input asp-for="ID" hidden />
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Redigere</h2>
+        </div>
+        <div class="col">
+            <div class="row-12">
+                <div class="form-group col">
+                    <div class="row">
+                        <label asp-for="AvisTypeID"></label>
+                        <input asp-for="AvisTypeID" class="form-control" />
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Avisdato"></label>
+                        <input asp-for="Avisdato" class="form-control" />
+
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Efternavn"></label>
+                        <input asp-for="Efternavn" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <label asp-for="Fornavne"></label>
+                        <input asp-for="Fornavne" class="form-control" />
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Foedt"></label>
+                        <input asp-for="Foedt" class="form-control" />
+
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Alder"></label>
+                        <input asp-for="Alder" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <label asp-for="Doebenavn"></label>
+                        <input asp-for="Doebenavn" class="form-control" />
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Erhverv"></label>
+                        <input asp-for="Erhverv" class="form-control" />
+
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Adresser"></label>
+                        <input asp-for="Adresser" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <label asp-for="SognID"></label>
+                        <input asp-for="SognID" class="form-control" />
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="TidlBopael"></label>
+                        <input asp-for="TidlBopael" class="form-control" />
+
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Doedsdato"></label>
+                        <input asp-for="Doedsdato" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <label asp-for="Begravelsesdato"></label>
+                        <input asp-for="Begravelsesdato" class="form-control" />
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Begravelsessted"></label>
+                        <input asp-for="Begravelsessted" class="form-control" />
+
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Efterladte"></label>
+                        <input asp-for="Efterladte" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <label asp-for="FlereDoedsannoncer"></label>
+                        <input asp-for="FlereDoedsannoncer" class="form-control" />
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="AndreDataFraAnnoncen"></label>
+                        <input asp-for="AndreDataFraAnnoncen" class="form-control" />
+
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Oegenavne"></label>
+                        <input asp-for="Oegenavne" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <label asp-for="Nekrolog"></label>
+                        <input asp-for="Nekrolog" class="form-control" />
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Mindeord"></label>
+                        <input asp-for="Mindeord" class="form-control" />
+
+                    </div>
+                    <div class="row-4">
+                        <label asp-for="Statstidende"></label>
+                        <input asp-for="Statstidende" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <label asp-for="Partnerlink"></label>
+                        <input asp-for="Partnerlink" class="form-control" />
+                    </div>
+
+                </div>
+                </br>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-danger w-75" value="Opdater" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-75">TilBage</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
