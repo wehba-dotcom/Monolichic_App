@@ -19,6 +19,7 @@ namespace ASP.NETCoreIdentityCustom.Controllers
             _signInManager = signInManager;
         }
         [Authorize(Policy = "RequireAdmin")]
+        [Authorize(Policy = "RequireManager")]
         public IActionResult Index()
         {
             var users = _unitOfWork.User.GetUsers();
