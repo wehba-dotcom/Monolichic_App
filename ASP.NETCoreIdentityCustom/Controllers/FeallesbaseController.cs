@@ -13,6 +13,7 @@ using String = System.String;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
 using ASP.NETCoreIdentityCustom.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Bornholm_Slægts.Controllers
 {
@@ -23,6 +24,8 @@ namespace Bornholm_Slægts.Controllers
         {
             _db = db;
         }
+        [Authorize(Policy = "RequireAdmin")]
+        [Authorize(Policy = "RequireManager")]
         public IActionResult Index(string? Firstname,DateTime? DoedDato, int pg = 1)
         {
            // ViewData["DateSortParm"] = Firstname == "DateTime" ? "Avisdato" : "DateTime";
