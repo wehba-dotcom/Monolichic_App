@@ -26,8 +26,8 @@
             }
             if (endPage > totalPages)
             {
-                endPage = TotalPages;
-                if(endPage < 10)
+                endPage = totalPages;
+                if(endPage > 10)
                 {
                     startPage = endPage-9;
                 }

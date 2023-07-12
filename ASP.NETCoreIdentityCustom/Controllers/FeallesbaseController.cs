@@ -23,7 +23,7 @@ namespace Bornholm_Slægts.Controllers
         {
             _db = db;
         }
-        public IActionResult Index(string? Firstname,DateTime? DoedDato)
+        public IActionResult Index(string? Firstname,DateTime? DoedDato, int pg = 1)
         {
            // ViewData["DateSortParm"] = Firstname == "DateTime" ? "Avisdato" : "DateTime";
             var objList = from b in _db.Feallesbases select b;
@@ -41,8 +41,8 @@ namespace Bornholm_Slægts.Controllers
             {
                 objList = objList.Where(b => b.Fornavne.Contains(Firstname));
             }
-            int pg = 1;
-            const int pageSize = 10;
+            
+            const int pageSize = 5;
             if (pg < 1)
             {
                 pg = 1;
