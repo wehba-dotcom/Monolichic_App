@@ -5,7 +5,17 @@
     ViewData["Title"] = "Users";
 }
 @model ICollection<ASP.NETCoreIdentityCustom.Areas.Identity.Data.ApplicationUser>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-4 text-right">
+            <a asp-controller="User" asp-action="Register" class="btn btn-primary w-50"> Tilføj Ny</a>
+        </div>
+        <div class="col-4">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-danger w-50">Tilbage</a>
+        </div>
 
+    </div>
+</div>
 <div class="text-center">
     <h1 class="display-4">Users</h1>
     @if ( @Model != null && @Model.Any())

@@ -56,6 +56,19 @@ namespace ASP.NETCoreIdentityCustom.Controllers
             
             return View(user);
         }
+
+        public IActionResult Register()
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreatePost(ApplicationUser user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
         [HttpPost]
         public IActionResult DeletePost(string id)
         {

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using String = System.String;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+using ASP.NETCoreIdentityCustom.Models;
 
 namespace Bornholm_Slægts.Controllers
 {
@@ -40,8 +41,19 @@ namespace Bornholm_Slægts.Controllers
             {
                 objList = objList.Where(b => b.Fornavne.Contains(Firstname));
             }
-            
-            return View(objList);
+            int pg = 1;
+            const int pageSize = 10;
+            if (pg < 1)
+            {
+                pg = 1;
+            }
+            int recsCount = objList.Count();
+            var pager = new Pager(recsCount, pg, pageSize);
+            int resSkip = (pg - 1) * pageSize;
+            var data = objList.Skip(resSkip).Take(pager.PageSize).ToList();
+            this.ViewBag.Pager = pager;
+
+            return View(data);
         }
        
         //public  IActionResult Index()
