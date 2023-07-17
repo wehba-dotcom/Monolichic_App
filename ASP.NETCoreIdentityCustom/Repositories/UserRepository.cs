@@ -30,8 +30,11 @@ namespace ASP.NETCoreIdentityCustom.Repositories
              return user;
         }
 
-       
-
-      
+        public ApplicationUser AddUser(ApplicationUser user)
+        {
+          _context.Users.Add(user);
+     
+            return user;
+        }
     }
 }

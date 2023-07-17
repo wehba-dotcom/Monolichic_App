@@ -9,6 +9,7 @@ namespace ASP.NETCoreIdentityCustom.Core.Repositories
         ApplicationUser GetUser(string id);
 
         ApplicationUser UpdateUser(ApplicationUser user);
-      
+        ApplicationUser AddUser(ApplicationUser user);
+
     }
 }

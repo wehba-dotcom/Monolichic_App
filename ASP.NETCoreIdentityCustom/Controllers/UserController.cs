@@ -1,6 +1,7 @@
 ﻿using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
 using ASP.NETCoreIdentityCustom.Core.Repositories;
 using ASP.NETCoreIdentityCustom.Core.ViewModels;
+using ASP.NETCoreIdentityCustom.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -63,9 +64,10 @@ namespace ASP.NETCoreIdentityCustom.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CreatePost(ApplicationUser user)
+        public IActionResult Create(ApplicationUser user)
         {
-            _context.Users.Add(user);
+
+            _unitOfWork.User.AddUser(user);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
