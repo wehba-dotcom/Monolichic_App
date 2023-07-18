@@ -12,41 +12,25 @@
 
 <div class="container p-3">
     <div class="row pt-4">
-               <div class="col-4 text-right">
-            <a asp-controller="Feallesbase" asp-action="Create" class="btn btn-primary w-50"> Tilføj Ny</a>
+        <div class="col-4 text-right">
+            <a asp-controller="Feallesbase" asp-action="Create" class="btn btn-primary w-50"><i class="bi bi-plus-circle-fill"></i> Tilføj Ny</a>
         </div>
         <div class="col-4">
-            <a asp-controller="Home" asp-action="Index" class="btn btn-danger w-50">Tilbage</a>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary w-50">Tilbage</a>
         </div>
        
+        
     </div>
-</div>
+
+
 <form asp-controller="Feallesbase" asp-action="Index">
-    <p>
-        @* <select name="tests" >
-            <option value="">All</option>
-        </select>*@
+    <div>
         Fornavne: <input type="text" name="Firstname" />
         DeodsDato: <input type="datetime" name="DoedDato" />
         <input type="submit" value="Søg" />
-       
-    </p>
+        <a asp-action="Index" class="btn btn-primary w-20">Tilbage til foled liste</a>
+    </div>
 </form>
-
-<br />
-<a asp-action="Index" class="btn btn-danger w-25">Tilbage til foled liste</a>
-@*<form >
-    <p>
-        
-        <select asp-action="Index" asp-controller="Feallesbase">
-            <option value="">All</option>
-        </select>
-        ForNavne: <input type="text"  />
-        <input type="submit" value="Søg" />
-    </p>
-</form>*@
-
-
 
     <br />
 <div class="container">
@@ -190,7 +174,7 @@
         }
 
  </div>
-
+</div>
 
 
 
