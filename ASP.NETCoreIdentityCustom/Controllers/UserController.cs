@@ -58,7 +58,7 @@ namespace ASP.NETCoreIdentityCustom.Controllers
             return View(user);
         }
 
-        public IActionResult Register()
+        public IActionResult Create()
         {
             
             return View();
@@ -67,7 +67,7 @@ namespace ASP.NETCoreIdentityCustom.Controllers
         public IActionResult Create(ApplicationUser user)
         {
 
-            _unitOfWork.User.AddUser(user);
+            _context.Users.Add(user);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
