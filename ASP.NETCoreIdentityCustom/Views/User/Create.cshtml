@@ -1,37 +1,36 @@
 ﻿@using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+@using ASP.NETCoreIdentityCustom.Areas.Identity.Pages.Account;
 @model ApplicationUser
 
 
    <form asp-action="Create" method="post">
-     <div class="row">
-        <div class="col-md-4">
-            <h2>Create a new account.</h2>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2>Oprette en ny konto.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating">
-                <input asp-for="FirstName" class="form-control" autocomplete="firstname" aria-required="true" />
-                <label asp-for="FirstName"></label>
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+            <div class="mb-3 p-1">
+                <label asp-for="FirstName" class="p-0"></label>
+                <input asp-for="FirstName" class="form-control" />
             </div>
-            <div class="form-floating">
-                <input asp-for="LastName" class="form-control" autocomplete="lastname" aria-required="true" />
-                <label asp-for="LastName"></label>
-                <span asp-validation-for="LastName" class="text-danger"></span>
+            <div class="mb-3 p-1">
+                <label asp-for="LastName" class="p-0"></label>
+                <input asp-for="LastName" class="form-control" />
             </div>
-            <div class="form-floating">
-                <input asp-for="Email" class="form-control" autocomplete="username" aria-required="true" />
-                <label asp-for="Email"></label>
-                <span asp-validation-for="Email" class="text-danger"></span>
+            <div class="mb-3 p-1">
+                <label asp-for="Email" class="p-0"></label>
+                <input asp-for="Email" class="form-control" />
             </div>
-            
-            <div class="form-floating">
-                <input asp-for="PasswordHash" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="PasswordHash"></label>
-                <span asp-validation-for="PasswordHash" class="text-danger"></span>
+            <div class="mb-3 p-1">
+                <label asp-for="PhoneNumber" class="p-0"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
             </div>
-            
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-        
+           
+            <div class=" row">
+                <div class="col-8 col-md-3">
+                    <button id="registerSubmit" type="submit" class="btn btn-info w-75">Registrere</button>
+                </div>
+            </div>
         </div>
     </div>
         
