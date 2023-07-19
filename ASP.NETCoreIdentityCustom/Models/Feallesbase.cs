@@ -20,6 +20,7 @@ namespace Bornholm_Slægts.Models
 
         public DateTime? Avisdato { get; set; }
         public string? Efternavn { get; set; }
+        [Required]
         public string? Fornavne { get; set; }
 
         public DateTime? Foedt { get; set; }

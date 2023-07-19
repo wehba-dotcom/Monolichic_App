@@ -16,10 +16,12 @@
                 <div class="mb-3 p-1">
                     <label asp-for="Input.Email" class="p-0"></label>
                     <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
                 <div class="mb-3 p-1">
                     <label asp-for="Input.Password" class="p-0"></label>
                     <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                
                 <div>

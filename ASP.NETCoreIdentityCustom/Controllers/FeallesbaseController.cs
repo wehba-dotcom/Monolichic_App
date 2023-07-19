@@ -58,36 +58,8 @@ namespace Bornholm_Slægts.Controllers
 
             return View(data);
         }
-       
-        //public  IActionResult Index()
-        //{
-         
-        //IQueryable<string> genreQuery = from m in _db.Feallesbases
-        //                                orderby m.SognID
-        //                                select m.SognID;
 
-        //         var objList = from m in _db.Feallesbases
-        //             select m;
-        //    Feallesbase feals = new Feallesbase();
-        //    if (!string.IsNullOrEmpty(feals.SearchString))
-        //    {
-        //                objList = objList.Where(s => s.Fornavne.Contains(feals.SearchString));
-        //    }
-
-        //    if (!string.IsNullOrEmpty(feals.SognsID))
-        //    {
-        //                objList = objList.Where(x => x.SognID == feals.SognsID);
-        //    }
-        //    feals.SognIDs = new SelectList( genreQuery.Distinct().ToList());
-        //    feals.Fealles =  objList.ToList();
-           
-        //    return View(objList);
-
-            
-        //}
-
-
-    public IActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -173,9 +145,14 @@ namespace Bornholm_Slægts.Controllers
         [HttpPost]
         public IActionResult Create(Feallesbase feallesbase)
         {
-            _db.Feallesbases.Add(feallesbase);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                _db.Feallesbases.Add(feallesbase);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+           
         }
         [HttpPost]
         public IActionResult UpdatePost(Feallesbase feallesbase)
