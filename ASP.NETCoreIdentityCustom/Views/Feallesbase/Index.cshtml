@@ -33,7 +33,7 @@
 </form>
 
     <br />
-<div class="container">
+<div class="container p-3">
     @if (pager.TotalPages > 0)
     {
         <ul class="pagination justify-content-end">
@@ -94,6 +94,7 @@
                     <th> Mindeord </th>
                     <th> Statstidende </th>
                     <th> Partnerlink </th>
+                    <th>Modifier</th>
                 </tr>
             </thead>
             <tbody>
@@ -124,10 +125,10 @@
                         <td width="5%">@item.Statstidende</td>
                         <td width="5%">@item.Partnerlink</td>
                         
-                        <td width="20%">
-                            <div class="w-100 btn-group" role="group">
-                                <a asp-controller="Feallesbase" asp-action="Update" asp-route-id="@item.ID" class="btn btn-primary mx-1">Redigere</a>
-                                <a asp-controller="Feallesbase" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger mx-1">Slet</a>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Feallesbase" asp-action="Update" asp-route-id="@item.ID" class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>Redigere</a>
+                                <a asp-controller="Feallesbase" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger mx-2"><i class="bi bi-trash3"></i>Slet</a>
                             </div>
 
                         </td>
@@ -142,7 +143,7 @@
         <p>No items created yet</p>
     }
 
- <div class="container">
+ <div class="container p-3">
         @if(pager.TotalPages>0)
        {
         <ul class="pagination justify-content-end">
