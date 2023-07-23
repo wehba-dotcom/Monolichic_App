@@ -145,6 +145,10 @@ namespace Bornholm_Slægts.Controllers
         [HttpPost]
         public IActionResult Create(Feallesbase feallesbase)
         {
+            if (feallesbase.Fornavne!= feallesbase.ToString())
+            {
+                ModelState.AddModelError("Fornavne", "Du har indtiste forkert typer");
+            }
             if(ModelState.IsValid)
             {
                 _db.Feallesbases.Add(feallesbase);
