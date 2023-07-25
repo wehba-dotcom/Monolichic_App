@@ -55,6 +55,7 @@ namespace Bornholm_Slægts.Controllers
             int resSkip = (pg - 1) * pageSize;
             var data = objList.Skip(resSkip).Take(pager.PageSize).ToList();
             this.ViewBag.Pager = pager;
+          
 
             return View(data);
         }
@@ -80,11 +81,15 @@ namespace Bornholm_Slægts.Controllers
 
         public IActionResult Update(int? ID)
         {
-            if (ID == null && ID == 0)
+            if (ID == null || ID == 0)
             {
                 return NotFound();
             }
             var obj = _db.Feallesbases.Find(ID);
+            if(obj==null)
+            {
+                return NotFound();
+            }
             return View(obj);
         }
         [HttpGet]
@@ -115,13 +120,14 @@ namespace Bornholm_Slægts.Controllers
         public IActionResult DeletePost(int? id)
         {
             var obj = _db.Feallesbases.Find(id);
-            if ( id==null)
+            if ( id==null || id==0)
             {
                 return NotFound();
             }
            
             _db.Feallesbases.Remove(obj);
             _db.SaveChanges();
+            TempData["success"] = "En annoncer sletet successfully";
             return RedirectToAction("Index");
         }
        
@@ -145,28 +151,31 @@ namespace Bornholm_Slægts.Controllers
         [HttpPost]
         public IActionResult Create(Feallesbase feallesbase)
         {
-            if (feallesbase.Fornavne!= feallesbase.ToString())
-            {
-                ModelState.AddModelError("Fornavne", "Du har indtiste forkert typer");
-            }
+            //if (feallesbase.Fornavne!= feallesbase.ToString())
+            //{
+            //    ModelState.AddModelError("Fornavne", "Du har indtiste forkert typer");
+            //}
             if(ModelState.IsValid)
             {
                 _db.Feallesbases.Add(feallesbase);
                 _db.SaveChanges();
+                TempData["success"] = "En annonccer tilgøjet successfully";
                 return RedirectToAction("Index");
             }
             return View();
            
         }
         [HttpPost]
-        public IActionResult UpdatePost(Feallesbase feallesbase)
+        public IActionResult Update(Feallesbase feallesbase)
         {
-           
-          
-            _db.Entry(feallesbase).State = EntityState.Modified;
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-
+          if(ModelState.IsValid)
+            {
+                _db.Entry(feallesbase).State = EntityState.Modified;
+                _db.SaveChanges();
+                TempData["success"] = "Anoncer Redigere successfully";
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }
