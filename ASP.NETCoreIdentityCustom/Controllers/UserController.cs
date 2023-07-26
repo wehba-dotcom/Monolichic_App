@@ -66,10 +66,13 @@ namespace ASP.NETCoreIdentityCustom.Controllers
         [HttpPost]
         public IActionResult Create(ApplicationUser user)
         {
-
-            _context.Users.Add(user);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.Users.Add(user);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
         [HttpPost]
         public IActionResult DeletePost(string id)
