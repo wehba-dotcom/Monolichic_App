@@ -13,25 +13,23 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-4 text-right">
-            <a asp-controller="Feallesbase" asp-action="Create" class="btn btn-primary w-50"><i class="bi bi-plus-circle-fill"></i> Tilføj Ny</a>
+            <a asp-controller="Feallesbase" asp-action="Create" class="btn btn-primary w-50"><i class="bi bi-plus-circle-fill"></i>  Tilføj Ny</a>
         </div>
-        <div class="col-4">
-            <a asp-controller="Home" asp-action="Index" class="btn btn-primary w-50">Tilbage</a>
+        <div class="col-4 text-">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary w-50"><i class="bi bi-backspace"></i>  Tilbage</a>
         </div>
-       
-        
     </div>
 
-
+    <hr/>
   <form asp-controller="Feallesbase" asp-action="Index">
     <div>
         Fornavne: <input type="text" name="Firstname" />
         DeodsDato: <input type="datetime" name="DoedDato" />
         <input type="submit" value="Søg" />
-        <a asp-action="Index" class="btn btn-primary w-20">Tilbage til foled liste</a>
+         <a asp-action="Index" class="btn btn-primary w-20"><i class="bi bi-backspace"></i>  Tilbage til fuld liste</a>
     </div>
   </form>
-
+    <hr />
     <br />
 
     @if (pager.TotalPages > 0)
@@ -66,7 +64,7 @@
 
  
 
-     @if (Model.Count() > 0)
+    @if (Model.Count() > 0)
     {
         <table class="table table-bordered table-striped" >
             <thead>
@@ -140,28 +138,28 @@
     }
     else
     {
-        <p>No items created yet</p>
+        <p>Ingen elementer oprettet endnu</p>
     }
 
  
-        @if(pager.TotalPages>0)
-       {
+     @if(pager.TotalPages>0)
+     {
         <ul class="pagination justify-content-end">
-           @if(pager.CurrentPage> 1)
-            {
+             @if(pager.CurrentPage> 1)
+             {
                 <li class="page-item ">
                     <a class="page-link" asp-controller="Feallesbase" asp-action="Index" asp-route-pg="1">First</a>
                 </li>
                 <li class="page-item ">
                     <a class="page-link" asp-controller="Feallesbase" asp-action="Index" asp-route-pg="@(pager.CurrentPage-1)">Previouse</a>
                 </li>
-            }
-            @for(var pge = pager.StartPage; pge<= pager.EndPage; pge++)
-            {
+             }
+           @for(var pge = pager.StartPage; pge<= pager.EndPage; pge++)
+           {
             <li class="page-item @(pge == pager.CurrentPage? "active":"")">
                 <a class="page-link" asp-controller="Feallesbase" asp-action="Index" asp-route-pg="@pge">@pge</a>
             </li>    
-            }
+           }
             @if (pager.CurrentPage < pager.TotalPages)
             {
                 <li class="page-item ">
@@ -171,9 +169,10 @@
                     <a class="page-link" asp-controller="Feallesbase" asp-action="Index" asp-route-pg="@(pager.TotalPages)">Last</a>
                 </li>
             }
-            </ul>
-        }
- </div> 
+        </ul>
+     }
+ <br/>
+</div> 
   
  
  
