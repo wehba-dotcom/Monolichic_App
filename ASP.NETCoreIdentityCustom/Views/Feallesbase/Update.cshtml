@@ -1,12 +1,16 @@
 ﻿@model Bornholm_Slægts.Models.Feallesbase
-
-
-<form method="post" asp-action="Update">
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-black-50 pl-3">Redigere</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+    <form method="post" asp-action="Update">
     <input asp-for="ID" hidden />
     <div class="border p-3">
-        <div class="form-group row">
-            <h2 class="text-black-50 pl-3">Redigere</h2>
-        </div>
         <div class="col">
             <div class="row-12">
                 <div class="form-group col">
@@ -139,6 +143,7 @@
         </div>
     </div>
 </form>
-
+  </div>
+</div>
 
 

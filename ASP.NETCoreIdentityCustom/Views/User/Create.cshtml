@@ -2,11 +2,18 @@
 @using ASP.NETCoreIdentityCustom.Areas.Identity.Pages.Account;
 @model ApplicationUser
 
-
-   <form asp-action="Create" method="post">
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Oprette en ny konto.</h2>
+            </div>
+        </div>
+    </div>
+       <form asp-action="Create" method="post">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2>Oprette en ny konto.</h2>
+            
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3 p-1">
@@ -42,4 +49,8 @@
     </div>
         
    </form>
+
+
+   </div>
+</div>
    <br/>
