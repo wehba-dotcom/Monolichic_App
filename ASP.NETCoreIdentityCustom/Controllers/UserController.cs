@@ -14,11 +14,13 @@ namespace ASP.NETCoreIdentityCustom.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ApplicationDbContext _context;
-        public UserController(IUnitOfWork unitOfWork, SignInManager<ApplicationUser> signInManager, ApplicationDbContext context)
+      
+        public UserController(IUnitOfWork unitOfWork, ApplicationDbContext context)
         {
             _unitOfWork = unitOfWork;
-            _signInManager = signInManager;
+          
             _context = context;
+           
         }
         [Authorize(Policy = "RequireAdmin")]
         [Authorize(Policy = "RequireManager")]
@@ -53,14 +55,14 @@ namespace ASP.NETCoreIdentityCustom.Controllers
         public IActionResult Delete(string id)
         {
             var user = _unitOfWork.User.GetUser(id);
-           
-            
+
+
             return View(user);
         }
 
         public IActionResult Create()
         {
-            
+
             return View();
         }
         [HttpPost]
@@ -68,6 +70,7 @@ namespace ASP.NETCoreIdentityCustom.Controllers
         {
             if (ModelState.IsValid)
             {
+              
                 _context.Users.Add(user);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -141,7 +144,8 @@ namespace ASP.NETCoreIdentityCustom.Controllers
 
             _unitOfWork.User.UpdateUser(user);
 
-            return RedirectToAction("Edit", new { id = user.Id });
+            return RedirectToAction("Index", new { id = user.Id });
         }
+       
     }
 }
