@@ -38,7 +38,7 @@
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Hjem</a>
                         </li>
-                        @if (SignInManager.IsSignedIn(User))
+                       @* @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,12 +56,12 @@
                                     </li>
                                 </ul>
                             </li>
-                        }
+                        }*@
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="User" asp-action="Index">Brugere</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Almindelig Bruger</a>
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Om Us</a>
                         </li>
                     </ul>
                 </div>
@@ -78,7 +78,7 @@
     <br/>
     <footer style=" background-color: #004953" class="border-top footer text-white text-muted text-center">
         <div class="container text-white" >
-            &copy; 2023 -Laver Med <i class="bi bi-suit-heart-fill"></i> Bornholm_Sleagts - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 -Laver Med <i class="bi bi-suit-heart-fill"></i> Bornholm_Sleagts - <a asp-area="" asp-controller="Home" asp-action="Privacy">Om Us</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
