@@ -15,11 +15,11 @@ namespace ASP.NETCoreIdentityCustom.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ApplicationDbContext _context;
       
-        public UserController(IUnitOfWork unitOfWork, ApplicationDbContext context)
+        public UserController(IUnitOfWork unitOfWork, ApplicationDbContext context, SignInManager<ApplicationUser> signInManager)
         {
             _unitOfWork = unitOfWork;
-          
-            _context = context;
+            _signInManager = signInManager;
+              _context = context;
            
         }
         [Authorize(Policy = "RequireAdmin")]
