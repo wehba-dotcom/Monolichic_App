@@ -10,10 +10,8 @@
         <div class="col-12 text-center">
             <h2 class="text-black-50 pl-3">Liste Brugere</h2>
         </div>
-    </div>
-
-
-    </div>
+    </div>   
+</div>
 
 <div class="text-center">
    
@@ -31,9 +29,9 @@
             </tr>
             </thead>
             <tbody>
-            @foreach (var user in Model)
-            {
-            <tr>
+              @foreach (var user in Model)
+               {
+               <tr>
                 <th scope="row">@user.Id</th>
                 <td>@user.FirstName</td>
                 <td>@user.LastName</td>
@@ -49,11 +47,10 @@
                             </div>
 
                         </td>
-            </tr>
-            }
+               </tr>
+              }
             </tbody>
         </table>
     }
 </div>
-
 <br/>
