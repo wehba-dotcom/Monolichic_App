@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "ASP.NETCoreIdentityCustom": {
+    "Bornholm_Sleagts": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

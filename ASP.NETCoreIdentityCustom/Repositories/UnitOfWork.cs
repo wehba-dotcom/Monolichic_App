@@ -1,6 +1,6 @@
-﻿using ASP.NETCoreIdentityCustom.Core.Repositories;
+﻿using Bornholm_Sleagts.Core.Repositories;
 
-namespace ASP.NETCoreIdentityCustom.Repositories
+namespace Bornholm_Sleagts.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

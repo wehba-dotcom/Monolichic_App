@@ -5,13 +5,13 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+using Bornholm_Sleagts.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace ASP.NETCoreIdentityCustom.Areas.Identity.Pages.Account
+namespace Bornholm_Sleagts.Areas.Identity.Pages.Account
 {
     public class LogoutModel : PageModel
     {

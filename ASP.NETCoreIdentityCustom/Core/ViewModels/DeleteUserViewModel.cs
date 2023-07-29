@@ -1,6 +1,6 @@
-﻿using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+﻿using Bornholm_Sleagts.Areas.Identity.Data;
 
-namespace ASP.NETCoreIdentityCustom.Core.ViewModels
+namespace Bornholm_Sleagts.Core.ViewModels
 {
     public class DeleteUserViewModel
     {

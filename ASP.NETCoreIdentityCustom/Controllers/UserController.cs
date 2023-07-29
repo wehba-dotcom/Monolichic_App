@@ -1,13 +1,13 @@
-﻿using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
-using ASP.NETCoreIdentityCustom.Core.Repositories;
-using ASP.NETCoreIdentityCustom.Core.ViewModels;
-using ASP.NETCoreIdentityCustom.Repositories;
+﻿using Bornholm_Sleagts.Areas.Identity.Data;
+using Bornholm_Sleagts.Core.Repositories;
+using Bornholm_Sleagts.Core.ViewModels;
+using Bornholm_Sleagts.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ASP.NETCoreIdentityCustom.Controllers
+namespace Bornholm_Sleagts.Controllers
 {
     public class UserController : Controller
     {

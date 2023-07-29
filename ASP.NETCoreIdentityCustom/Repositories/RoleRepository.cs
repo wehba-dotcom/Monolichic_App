@@ -1,8 +1,8 @@
-﻿using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
-using ASP.NETCoreIdentityCustom.Core.Repositories;
+﻿using Bornholm_Sleagts.Areas.Identity.Data;
+using Bornholm_Sleagts.Core.Repositories;
 using Microsoft.AspNetCore.Identity;
 
-namespace ASP.NETCoreIdentityCustom.Repositories
+namespace Bornholm_Sleagts.Repositories
 {
     public class RoleRepository : IRoleRepository
     {

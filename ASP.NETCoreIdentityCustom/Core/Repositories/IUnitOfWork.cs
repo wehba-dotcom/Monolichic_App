@@ -1,4 +1,4 @@
-﻿namespace ASP.NETCoreIdentityCustom.Core.Repositories
+﻿namespace Bornholm_Sleagts.Core.Repositories
 {
     public interface IUnitOfWork
     {

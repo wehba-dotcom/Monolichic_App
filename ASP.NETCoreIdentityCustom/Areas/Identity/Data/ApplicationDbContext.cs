@@ -1,11 +1,11 @@
-﻿using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+﻿using Bornholm_Sleagts.Areas.Identity.Data;
 using Bornholm_Slægts.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+namespace Bornholm_Sleagts.Areas.Identity.Data;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole, string>
 {

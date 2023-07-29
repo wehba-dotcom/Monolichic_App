@@ -1,9 +1,9 @@
-﻿using ASP.NETCoreIdentityCustom.Models;
+﻿using Bornholm_Sleagts.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ASP.NETCoreIdentityCustom.Controllers
+namespace Bornholm_Sleagts.Controllers
 {
     public class HomeController : Controller
     {

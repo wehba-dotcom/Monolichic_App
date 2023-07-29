@@ -1,4 +1,4 @@
-namespace ASP.NETCoreIdentityCustom.Models
+namespace Bornholm_Sleagts.Models
 {
     public class ErrorViewModel
     {

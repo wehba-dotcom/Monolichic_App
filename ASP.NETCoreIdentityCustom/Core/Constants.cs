@@ -1,4 +1,4 @@
-﻿namespace ASP.NETCoreIdentityCustom.Core
+﻿namespace Bornholm_Sleagts.Core
 {
     public static class Constants
     {

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ASP.NETCoreIdentityCustom.Migrations
+namespace Bornholm_Sleagts.Migrations
 {
     public partial class SeedRoles : Migration
     {

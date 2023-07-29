@@ -11,8 +11,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 using String = System.String;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
-using ASP.NETCoreIdentityCustom.Models;
+using Bornholm_Sleagts.Areas.Identity.Data;
+using Bornholm_Sleagts.Models;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Bornholm_Slægts.Controllers

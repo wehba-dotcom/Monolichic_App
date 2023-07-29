@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
-using ASP.NETCoreIdentityCustom.Core;
-using ASP.NETCoreIdentityCustom.Core.Repositories;
-using ASP.NETCoreIdentityCustom.Repositories;
+using Bornholm_Sleagts.Areas.Identity.Data;
+using Bornholm_Sleagts.Core;
+using Bornholm_Sleagts.Core.Repositories;
+using Bornholm_Sleagts.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection");

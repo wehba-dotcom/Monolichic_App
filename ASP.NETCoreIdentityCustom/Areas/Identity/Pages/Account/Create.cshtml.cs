@@ -22,7 +22,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Bornholm_Sleagts.Areas.Identity.Pages.Account
 {
-    public class RegisterModel : PageModel
+    public class CreateModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
@@ -31,7 +31,7 @@ namespace Bornholm_Sleagts.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
-        public RegisterModel(
+        public CreateModel(
             UserManager<ApplicationUser> userManager,
             IUserStore<ApplicationUser> userStore,
             SignInManager<ApplicationUser> signInManager,
@@ -51,13 +51,13 @@ namespace Bornholm_Sleagts.Areas.Identity.Pages.Account
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         [BindProperty]
-        public InputModel Input { get; set; }
+        public InputModel Inputs { get; set; }
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public string ReturnUrl { get; set; }
+        public string ReturnUrls { get; set; }
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -115,7 +115,7 @@ namespace Bornholm_Sleagts.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            ReturnUrl = returnUrl;
+            ReturnUrls = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
@@ -128,12 +128,12 @@ namespace Bornholm_Sleagts.Areas.Identity.Pages.Account
                 var user = CreateUser();
 
 
-                user.FirstName = Input.FirstName;
-                user.LastName = Input.LastName;
+                user.FirstName = Inputs.FirstName;
+                user.LastName = Inputs.LastName;
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
-                await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-                var result = await _userManager.CreateAsync(user, Input.Password);
+                await _userStore.SetUserNameAsync(user, Inputs.Email, CancellationToken.None);
+                await _emailStore.SetEmailAsync(user, Inputs.Email, CancellationToken.None);
+                var result = await _userManager.CreateAsync(user, Inputs.Password);
 
                 if (result.Succeeded)
                 {
@@ -148,12 +148,12 @@ namespace Bornholm_Sleagts.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    await _emailSender.SendEmailAsync(Inputs.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("RegisterConfirmation", new { email = Inputs.Email, returnUrl = returnUrl });
                     }
                     else
                     {

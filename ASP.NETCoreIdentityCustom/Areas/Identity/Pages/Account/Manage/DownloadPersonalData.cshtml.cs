@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using ASP.NETCoreIdentityCustom.Areas.Identity.Data;
+using Bornholm_Sleagts.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace ASP.NETCoreIdentityCustom.Areas.Identity.Pages.Account.Manage
+namespace Bornholm_Sleagts.Areas.Identity.Pages.Account.Manage
 {
     public class DownloadPersonalDataModel : PageModel
     {

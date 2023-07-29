@@ -1,8 +1,8 @@
-﻿using ASP.NETCoreIdentityCustom.Core;
+﻿using Bornholm_Sleagts.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ASP.NETCoreIdentityCustom.Controllers
+namespace Bornholm_Sleagts.Controllers
 {
     public class RoleController : Controller
     {
