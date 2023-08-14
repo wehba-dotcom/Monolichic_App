@@ -11,14 +11,14 @@ namespace Bornholm_Sleagts.Controllers
             return View();
         }
 
-        [Authorize(Policy = Constants.Policies.RequireAdmin)]
+        [Authorize(Policy = "RequireAdmin")]
         public IActionResult Manager()
         {
             return View();
         }
 
-        //[Authorize(Policy = "RequireAdmin")]
-        [Authorize(Roles = $"{Constants.Roles.Administrator},{Constants.Roles.Manager}")]
+        [Authorize(Policy = "RequireAdmin")]
+        [Authorize(Policy = $"{"RequireAdmin"}")]
         public IActionResult Admin()
         {
             return View();

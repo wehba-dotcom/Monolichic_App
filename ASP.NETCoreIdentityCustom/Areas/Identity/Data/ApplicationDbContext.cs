@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Bornholm_Sleagts.Models;
 
 namespace Bornholm_Sleagts.Areas.Identity.Data;
 
@@ -14,7 +15,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
     {
     }
     public DbSet<Feallesbase> Feallesbases { get; set; }
-    public DbSet<ApplicationUser> Users { get; set; }
+    public DbSet<VwUser> VwUsers { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

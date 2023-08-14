@@ -25,9 +25,14 @@
                     <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="mb-3 p-1">
-                    <label asp-for="Email" class="p-0"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="Email" class="p-0"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3 p-1">
+                    <label asp-for="PasswordHash" class="p-0"></label>
+                <input asp-for="PasswordHash" class="form-control" />
+                <span asp-validation-for="PasswordHash" class="text-danger"></span>
             </div>
            @* <div class="mb-3 p-1">
                     <label asp-for="Password" class="p-0"></label>

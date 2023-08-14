@@ -24,8 +24,8 @@ namespace Bornholm_Slægts.Controllers
         {
             _db = db;
         }
-        [Authorize(Policy = "RequireAdmin")]
-        [Authorize(Policy = "RequireManager")]
+        [Authorize( "Admin")]
+       // [Authorize(Policy = "RequireManager")]
         public IActionResult Index(string? Firstname,DateTime? DoedDato, int pg = 1)
         {
            // ViewData["DateSortParm"] = Firstname == "DateTime" ? "Avisdato" : "DateTime";

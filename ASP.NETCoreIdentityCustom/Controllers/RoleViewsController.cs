@@ -11,7 +11,7 @@ namespace Bornholm_Sleagts.Controllers
             return View();
         }
 
-        [Authorize(Policy = Constants.Policies.RequireManager)]
+        [Authorize(Policy = "RequireManager")]
         public IActionResult Manager()
         {
             return View();

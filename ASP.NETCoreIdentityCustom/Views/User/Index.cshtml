@@ -12,7 +12,14 @@
         </div>
     </div>   
 </div>
-
+<div class="row pt-4">
+    <div class="col-4 text-right">
+        <a asp-controller="User" asp-action="Create" class="btn btn-primary w-50"><i class="bi bi-plus-circle-fill"></i>  Tilføj Ny</a>
+    </div>
+    <div class="col-4 text-">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary w-50"><i class="bi bi-backspace"></i>  Tilbage</a>
+    </div>
+</div>
 <div class="text-center">
    
     @if ( @Model != null && @Model.Any())
@@ -24,6 +31,7 @@
                 <th scope="col">Fornavn</th>
                  <th scope="col">Efternavn</th>
                 <th scope="col">Email</th>
+                
                 <th scope="col">Redigere</th>
                 <th scope="col">Slet</th>
             </tr>
@@ -36,6 +44,7 @@
                 <td>@user.FirstName</td>
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
+              
                         <td>
                             <div class=" btn-group" role="group">
                                 <a asp-controller="User" asp-action="Edit" asp-route-id="@user.Id" class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>  Redigere</a>

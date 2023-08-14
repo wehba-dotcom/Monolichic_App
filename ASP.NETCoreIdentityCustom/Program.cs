@@ -4,6 +4,7 @@ using Bornholm_Sleagts.Areas.Identity.Data;
 using Bornholm_Sleagts.Core;
 using Bornholm_Sleagts.Core.Repositories;
 using Bornholm_Sleagts.Repositories;
+using Bornholm_Sleagts.Seeds;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection");
@@ -48,6 +49,19 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
+using var Scope = app.Services.CreateScope();
+var services = Scope.ServiceProvider;
+try
+{
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+    await DefaultRole.SeedAsync(roleManager);
+    await DefaultUser.SeedAdminAsync(userManager, roleManager);
+    await DefaultUser.SeedBasicUserAsync(userManager, roleManager);
+}
+catch (Exception) { throw; }
+
 
 app.Run();
 
