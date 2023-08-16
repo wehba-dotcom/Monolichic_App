@@ -1,4 +1,4 @@
-﻿﻿
+﻿
 @{
     ViewData["Title"] = "Users";
 }
@@ -31,7 +31,7 @@
                 <th scope="col">Fornavn</th>
                  <th scope="col">Efternavn</th>
                 <th scope="col">Email</th>
-                
+                    <th scope="col">Role</th>
                 <th scope="col">Redigere</th>
                 <th scope="col">Slet</th>
             </tr>
@@ -44,7 +44,7 @@
                 <td>@user.FirstName</td>
                 <td>@user.LastName</td>
                 <td>@user.Email</td>
-              
+                        <td>@user.</td>
                         <td>
                             <div class=" btn-group" role="group">
                                 <a asp-controller="User" asp-action="Edit" asp-route-id="@user.Id" class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>  Redigere</a>
